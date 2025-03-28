@@ -4,8 +4,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo "iniciando"
-                sh 'mvn --version'
+                sh 'echo "iniciando"'
+                sh ''' 
+                    mvn --version
+                    ls -lah
+                ''' 
             }
         }
     }
