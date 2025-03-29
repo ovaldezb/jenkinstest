@@ -11,5 +11,16 @@ pipeline {
                 ''' 
             }
         }
+        post{
+          always{
+            echo 'Terminó el pipe'
+          }
+          success{
+            echo 'Termino de manera exitosa'
+          }
+          failure{
+            echo 'fracaso total'
+          }
+       }
     }
 }
