@@ -15,6 +15,11 @@ pipeline {
                 ''' 
             }
         }
+        stage('Sanity-Check'){
+          steps{
+            input "El ambiente de stage se ve bien?"
+          }
+        }
         stage('build-prod'){
           steps{
             sh 'echo "iniciando ${PROD}"'
