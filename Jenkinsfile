@@ -1,10 +1,13 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent { docker { image 'maven:3.9.9-eclipse-temurin-21-alpine' } }
-    stages {
+      environment{
+        LABEL='ETIQUETA'
+      }
+      stages {
         stage('build') {
             steps {
-                sh 'echo "iniciando"'
+                sh 'echo "iniciando ${LABEL}"'
                 sh ''' 
                     mvn --version
                     ls -lah
